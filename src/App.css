@@ -1,7 +1,32 @@
-#root {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+.panel-view, .panel-edit {
+  background-color: white;
+  height: 90%;
+  border-radius: 0.5rem;
+  margin: 0 10px;
+}
+
+.panel-view {
+  flex: 5;
+  color: #262626
+}
+
+.panel-edit {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.section-buttons, .section-edit {
+  display: flex;
+  flex-direction: row;
+  padding: 0.6rem;
+  justify-content: space-around;
+  
+}
+
+.section-edit {
+  flex-direction: column;
+  justify-content: start;
+  color: #262626
 }

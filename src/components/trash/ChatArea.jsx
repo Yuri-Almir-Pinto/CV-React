@@ -21,7 +21,7 @@ function TextArea(props) {
   )
 }
 
-function ChatArea(prop) {
+function ChatArea( ) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 

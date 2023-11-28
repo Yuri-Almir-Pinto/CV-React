@@ -1,0 +1,21 @@
+input, textarea, input:focus, textarea:focus {
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: none;
+    font-family: inherit;
+}
+
+label {
+    font-weight: 600;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem 0;
+}
