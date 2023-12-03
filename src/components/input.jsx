@@ -1,31 +1,58 @@
 import './input.css'
-
+/**
+ * Expects plain objects, or normal arrays, or arrays that contain ONLY plain objects.
+ * @param {*} props 
+ */
 export default function LabeledInput(props) {
-    const { label, type, value, setValue, field, id } = props;
-    
-    function changeHandler(e) {
-        if (!field)
-            setValue(e.target.value);
+    const { label, type, value, setValue, field, index, id } = props;
+    function handleInputLocation(input) {
+        if (field == null && index == null)
+            return input;
+        else {
+            if (field == null && index != null)
+                return input[field];
+            else if (index == null && field != null)
+                return input[field];
+            else if (index != null && field != null)
+                return input[index][field];
+        }
+    }
+    function handleSaveLocation(input) {
+        if (field == null && index == null)
+            return input;
         else {
             let obj = structuredClone(value);
-            obj[field] = e.target.value
-            setValue(obj);
+            if (field == null && index != null) {
+                obj[field] = input;
+                return obj;
+            }
+            else if (index == null && field != null) {
+                obj[index] = input;
+                return obj;
+            }
+            else if (index != null && field != null) {
+                obj[index][field] = input;
+                return obj;
+            }
         }
-            
+    }
+
+    function changeHandler(e) {
+        setValue(handleSaveLocation(e.target.value));
     }
 
     return (
         <div className="container">
-            <label for={id}>{label}</label>
+            <label htmlFor={id}>{label}</label>
             {type !== "textArea" ?
                 <input 
                 type={ type ? type : "text"}
-                value={ !field ? value : value[field] }
+                value={ handleInputLocation(value) }
                 onChange={(e) => {changeHandler(e)}}
                 id={id}/>
             : type === "textArea" &&
                 <textarea
-                value={ !field ? value : value[field] }
+                value={ handleInputLocation(value) }
                 onChange={(e) => {changeHandler(e)}}
                 rows={9}
                 id={id}></textarea>
