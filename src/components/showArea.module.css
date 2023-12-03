@@ -1,4 +1,4 @@
-h1 {
+.h1 {
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
     background-color: #505050;
@@ -14,16 +14,17 @@ h1 {
 }
 
 .basicInfo {
-    display: grid;
-    grid-template-columns: 5fr 3fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+}
+
+.basicInfoDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 5
 }
 
 .basicInfo p {
     padding: 0.6em;
     margin: 0;
-}
-
-.basicInfo div {
-    border-left: 1px solid black;
 }

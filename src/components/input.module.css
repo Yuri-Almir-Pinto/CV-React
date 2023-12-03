@@ -1,4 +1,4 @@
-input, textarea, input:focus, textarea:focus {
+.input, .textarea, .input:focus, .textarea:focus {
     padding: 0.5rem;
     outline: none;
     border-radius: 0.2rem;
@@ -6,11 +6,11 @@ input, textarea, input:focus, textarea:focus {
     font-family: inherit;
 }
 
-label {
+.label {
     font-weight: 600;
 }
 
-textarea {
+.textarea {
     resize: vertical;
 }
 

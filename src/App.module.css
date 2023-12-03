@@ -1,23 +1,23 @@
-.panel-view, .panel-edit {
+.panelView, .panelEdit {
   background-color: white;
   height: 90%;
   border-radius: 0.5rem;
   margin: 0 10px;
+  overflow: auto;
 }
 
-.panel-view {
+.panelView {
   flex: 5;
   color: #262626;
 }
 
-.panel-edit {
+.panelEdit {
   flex: 3;
   display: flex;
-  flex-direction: column;
-  overflow: auto;
+  flex-direction: column; 
 }
 
-.section-buttons, .section-edit {
+.sectionButtons, .sectionEdit {
   display: flex;
   flex-direction: row;
   padding: 0.6rem;
@@ -25,7 +25,7 @@
   
 }
 
-.section-edit {
+.sectionEdit {
   flex-direction: column;
   justify-content: start;
   color: #262626

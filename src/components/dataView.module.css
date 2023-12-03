@@ -1,0 +1,71 @@
+.h1 {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    background-color: #505050;
+    color: white;
+    padding: 0.6em;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+}
+
+.actions {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actions p {
+    text-align: center;
+}
+
+.deleteButton, .editButton {
+    margin: 0 1em;
+    padding: 0.5em;
+    width: 3em;
+    border: none;
+    border-radius: 0.3em;
+    transition: background-color 0.3s;
+}
+
+.deleteButton:hover, .editButton:hover {
+    cursor: pointer;
+}
+
+.deleteButton {
+    background-color: rgb(254, 59, 59);
+}
+
+.deleteButton:hover {
+    background-color: rgb(255, 99, 99);
+}
+
+.editButton {
+    background-color:rgb(1, 159, 159);
+}
+
+.editButton:hover {
+    background-color:rgb(67, 199, 199);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 5;
+}
+
+.content h1, .content h2, .content h3, .content p {
+    margin: 0.1em 0;
+}

@@ -1,16 +1,15 @@
-import styles from './showArea.module.css';
-import { basicDemo, basicTemplate } from '../data/basicData';
+import './showArea.css';
 
-export default function ShowArea (props) {
+export default function EducationView (props) {
     const { basicData = basicTemplate } = props;
 
     return (
         <>
-        <article className={styles.header}>
-            <h1 className={styles.h1}>{basicData.name}</h1>
+        <article className="header">
+            <h1>{basicData.name}</h1>
         </article>
-        <article className={styles.basicInfo}>
-            <div className={styles.basicInfoDescription}>
+        <article className="basicInfo">
+            <div className="basicInfo-description">
                 <p>{basicData.description}</p>
             </div>
             <div>

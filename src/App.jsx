@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.css';
 import SelectButton from './components/button';
 import { useState } from 'react';
 import LabeledInput from './components/input';
@@ -9,18 +9,19 @@ import { educationDemo, educationTemplate } from './data/educationData';
 import { professionalDemo, professionalTemplate } from './data/professionalData';
 import ProfessionalArea from './components/professionalArea';
 import ShowArea from './components/showArea';
+import DataView from './components/dataView';
 
 export default function App () {
     const [currentEditPanel, setCurrentEditPanel] = useState(0); // Contains the id of the current edit panel (Left one)
     const [basicData, setBasicData] = useState(basicDemo); // Contains basic user Data
-    const [educationData, setEducationData] = useState(educationTemplate); // Contains education user Data
+    const [educationData, setEducationData] = useState(educationDemo); // Contains education user Data
     const [professionalData, setProfessionalData] = useState(professionalDemo)
 
     const [index, setIndex] = useState(-1); // Contains the index of user education/experience for editing
     return(
         <>
-        <div className='panel-edit'>
-            <div className='section-buttons'>
+        <div className={styles.panelEdit}>
+            <div className={styles.sectionButtons}>
                 <SelectButton clickHandler={setCurrentEditPanel} id={0}>
                     Basic
                 </SelectButton>
@@ -31,7 +32,7 @@ export default function App () {
                     Experience
                 </SelectButton>
             </div>
-            <div className="section-edit">
+            <div className={styles.sectionEdit}>
                 {currentEditPanel === 0 ? // If current edit panel is set to 0
                     <BasicArea 
                     data = { basicData }
@@ -50,9 +51,17 @@ export default function App () {
             </div>
             
         </div>
-        <div className='panel-view'>
+        <div className={styles.panelView}>
             <ShowArea
-            basicData = { basicData } />
+            basicData = { basicData }/>
+            <DataView
+            data ={ educationData }
+            title = "Education"
+            type = "education"/>
+            <DataView
+            data = { professionalData }
+            title = "Professional"
+            type = "professional"/>
         </div>
         </>
     )

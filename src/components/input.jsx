@@ -1,4 +1,4 @@
-import './input.css'
+import styles from './input.module.css'
 /**
  * Expects plain objects, or normal arrays, or arrays that contain ONLY plain objects.
  * @param {*} props 
@@ -43,16 +43,18 @@ export default function LabeledInput(props) {
     }
 
     return (
-        <div className="container">
-            <label htmlFor={id}>{label}</label>
+        <div className={styles.container}>
+            <label className={styles.label} htmlFor={id}>{label}</label>
             {type !== "textArea" ?
                 <input 
+                className={styles.input}
                 type={ type ? type : "text"}
                 value={ handleInputLocation(value) }
                 onChange={(e) => {changeHandler(e)}}
                 id={id}/>
             : type === "textArea" &&
                 <textarea
+                className={styles.textArea}
                 value={ handleInputLocation(value) }
                 onChange={(e) => {changeHandler(e)}}
                 rows={9}
