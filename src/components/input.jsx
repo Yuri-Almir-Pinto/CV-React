@@ -18,16 +18,17 @@ export default function LabeledInput(props) {
         }
     }
     function handleSaveLocation(input) {
+        debugger;
         if (field == null && index == null)
             return input;
         else {
             let obj = structuredClone(value);
             if (field == null && index != null) {
-                obj[field] = input;
+                obj[index] = input;
                 return obj;
             }
             else if (index == null && field != null) {
-                obj[index] = input;
+                obj[field] = input;
                 return obj;
             }
             else if (index != null && field != null) {

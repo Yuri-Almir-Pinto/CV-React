@@ -1,0 +1,29 @@
+h1 {
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+    background-color: #505050;
+    color: white;
+    padding: 0.6em;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+.basicInfo {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.basicInfo p {
+    padding: 0.6em;
+    margin: 0;
+}
+
+.basicInfo div {
+    border-left: 1px solid black;
+}
