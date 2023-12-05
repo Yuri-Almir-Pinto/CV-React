@@ -11,6 +11,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --addColor: rgb(13, 206, 138);
+  --addColorHover: rgb(92, 205, 166);
+  --editColor: rgb(53, 181, 232);
+  --editColorHover: rgb(114, 199, 233);
+  --deleteColor: rgb(254, 59, 59);
+  --deleteColorHover: rgb(255, 99, 99);
+
 }
 
 body, html {

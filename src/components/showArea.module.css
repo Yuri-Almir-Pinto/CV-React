@@ -24,6 +24,10 @@
     flex: 5
 }
 
+.basicInfoContact {
+    flex: 3;
+}
+
 .basicInfo p {
     padding: 0.6em;
     margin: 0;

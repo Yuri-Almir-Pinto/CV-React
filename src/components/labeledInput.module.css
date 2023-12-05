@@ -1,4 +1,4 @@
-.input, .textarea, .input:focus, .textarea:focus {
+.input, .textArea, .input:focus, .textArea:focus {
     padding: 0.5rem;
     outline: none;
     border-radius: 0.2rem;
@@ -10,7 +10,7 @@
     font-weight: 600;
 }
 
-.textarea {
+.textArea {
     resize: vertical;
 }
 

@@ -1,4 +1,4 @@
-import LabeledInput from "./input";
+import LabeledInput from "./labeledInput";
 
 export default function BasicArea(props) {
     const { data, setData } = props;

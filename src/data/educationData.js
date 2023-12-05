@@ -1,15 +1,24 @@
-let educationTemplate = [
-    {
-        "id": 0,
+const educationTemplate = {
+        "id": null,
         "institution": "",
         "field": "",
         "startDate": "",
         "endDate": "",
         "address": ""
     }
+
+const educationEmpty = [
+    {
+        "id": null,
+        "institution": "",
+        "field": "",
+        "startDate": "",
+        "endDate": "",
+        "address": "" 
+    }
 ]
 
-let educationDemo = [
+const educationDemo = [
     {
         "id": 0,
         "institution": "IFPR - Instituto Federal do Paraná",
@@ -21,4 +30,4 @@ let educationDemo = [
 ]
 
 
-export { educationTemplate, educationDemo };
+export { educationTemplate, educationDemo, educationEmpty };

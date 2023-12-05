@@ -1,23 +1,25 @@
 import styles from './App.module.css';
 import SelectButton from './components/button';
 import { useState } from 'react';
-import LabeledInput from './components/input';
+import LabeledInput from './components/labeledInput';
 import BasicArea from './components/basicArea';
 import EducationArea from './components/educationArea';
-import { basicDemo, basicTemplate } from './data/basicData';
-import { educationDemo, educationTemplate } from './data/educationData';
-import { professionalDemo, professionalTemplate } from './data/professionalData';
+import { basicDemo, basicTemplate, basicEmpty } from './data/basicData';
+import { educationDemo, educationTemplate, educationEmpty } from './data/educationData';
+import { professionalDemo, professionalTemplate, professionalEmpty } from './data/professionalData';
 import ProfessionalArea from './components/professionalArea';
 import ShowArea from './components/showArea';
 import DataView from './components/dataView';
 
 export default function App () {
-    const [currentEditPanel, setCurrentEditPanel] = useState(0); // Contains the id of the current edit panel (Left one)
-    const [basicData, setBasicData] = useState(basicDemo); // Contains basic user Data
-    const [educationData, setEducationData] = useState(educationDemo); // Contains education user Data
-    const [professionalData, setProfessionalData] = useState(professionalDemo)
-
-    const [index, setIndex] = useState(-1); // Contains the index of user education/experience for editing
+    const [currentEditPanel, setCurrentEditPanel] = useState(0);
+    const [basicData, setBasicData] = useState(basicEmpty);
+    const [educationData, setEducationData] = useState(educationEmpty);
+    const [educationEdit, setEducationEdit] = useState(educationTemplate);
+    const [educationIndex, setEducationIndex] = useState(null)
+    const [professionalData, setProfessionalData] = useState(professionalEmpty);
+    const [professionalEdit, setProfessionalEdit] = useState(professionalTemplate);
+    const [professionalIndex, setProfessionalIndex] = useState(null);
     return(
         <>
         <div className={styles.panelEdit}>
@@ -39,14 +41,20 @@ export default function App () {
                     setData = { setBasicData }/>
                 : currentEditPanel === 1 ? // If current edit panel is set to 1
                     <EducationArea
-                    data = { educationData }
-                    setData = { setEducationData }
-                    index = { 0 }/>
+                    data = { educationEdit }
+                    setData = { setEducationEdit }
+                    pushData = { educationData }
+                    setPushData = { setEducationData }
+                    index = { educationIndex }
+                    setIndex = { setEducationIndex }/>
                 : currentEditPanel === 2 ? // If current edit panel is set to 2
                     <ProfessionalArea
-                    data = { professionalData }
-                    setData = { setProfessionalData }
-                    index = { 0 }/>
+                    data = { professionalEdit }
+                    setData = { setProfessionalEdit }
+                    pushData = { professionalData }
+                    setPushData = { setProfessionalData }
+                    index = { professionalIndex }
+                    setIndex = { setProfessionalIndex }/>
                 : <div> Invalid ID </div>}
             </div>
             
@@ -54,14 +62,25 @@ export default function App () {
         <div className={styles.panelView}>
             <ShowArea
             basicData = { basicData }/>
-            <DataView
-            data ={ educationData }
-            title = "Education"
-            type = "education"/>
-            <DataView
-            data = { professionalData }
-            title = "Professional"
-            type = "professional"/>
+            { (educationData != null && educationData[0]?.id != null) && 
+                <DataView
+                data = { educationData }
+                setData = { setEducationData }
+                setEdit = { setEducationEdit }
+                title = "Education"
+                type = "education"
+                setIndex = { setEducationIndex }/>
+            }
+            { (professionalData != null && professionalData[0]?.id != null) && 
+                <DataView
+                data = { professionalData }
+                setData = { setProfessionalData }
+                setEdit = { setProfessionalEdit }
+                title = "Professional"
+                type = "professional"
+                setIndex = { setProfessionalIndex }/>
+            }
+            
         </div>
         </>
     )

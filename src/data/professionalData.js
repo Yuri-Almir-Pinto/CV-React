@@ -1,6 +1,15 @@
-let professionalTemplate = [
+const professionalTemplate = {
+        "id": null,
+        "companyName": "",
+        "positionTitle": "",
+        "startDate": "",
+        "endDate": "",
+        "description": ""
+    }
+
+const professionalEmpty = [
     {
-        "id": 0,
+        "id": null,
         "companyName": "",
         "positionTitle": "",
         "startDate": "",
@@ -9,7 +18,7 @@ let professionalTemplate = [
     }
 ]
 
-let professionalDemo = [
+const professionalDemo = [
     {
         "id": 0,
         "companyName": "SMTI",
@@ -21,4 +30,4 @@ let professionalDemo = [
 ]
 
 
-export { professionalTemplate, professionalDemo };
+export { professionalTemplate, professionalDemo, professionalEmpty };

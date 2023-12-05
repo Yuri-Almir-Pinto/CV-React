@@ -1,0 +1,30 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 1em;
+}
+
+.saveButton {
+    background-color: var(--editColor)
+}
+
+.saveButton:hover, .saveButton:focus {
+    background-color: var(--editColorHover);
+}
+
+.addButton {
+    background-color: var(--addColor);
+}
+
+.addButton:hover, .addButton:hover {
+    background-color: var(--addColorHover);
+}
+
+.deleteButton {
+    background-color: var(--deleteColor);
+}
+
+.deleteButton:hover, .deleteButton:hover {
+    background-color: var(--deleteColorHover);
+}
