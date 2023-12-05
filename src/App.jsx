@@ -69,7 +69,9 @@ export default function App () {
                 setEdit = { setEducationEdit }
                 title = "Education"
                 type = "education"
-                setIndex = { setEducationIndex }/>
+                setIndex = { setEducationIndex }
+                setCurrentEditPanel = { setCurrentEditPanel }
+                currentEditPanel = {1}/>
             }
             { (professionalData != null && professionalData[0]?.id != null) && 
                 <DataView
@@ -78,7 +80,9 @@ export default function App () {
                 setEdit = { setProfessionalEdit }
                 title = "Professional"
                 type = "professional"
-                setIndex = { setProfessionalIndex }/>
+                setIndex = { setProfessionalIndex }
+                setCurrentEditPanel = { setCurrentEditPanel }
+                currentEditPanel = {2}/>
             }
             
         </div>

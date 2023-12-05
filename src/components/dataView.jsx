@@ -1,11 +1,12 @@
 import styles from './dataView.module.css';
 
 export default function DataView (props) {
-    const { data, setData, title, type, setEdit, setIndex } = props;
+    const { data, setData, title, type, setEdit, setIndex, setCurrentEditPanel, currentEditPanel } = props;
     
     function edit(index) {
         setEdit(data[index]);
         setIndex(index);
+        setCurrentEditPanel(currentEditPanel);
     }
 
     function del(index) {
@@ -18,7 +19,7 @@ export default function DataView (props) {
     return (
         <>
         <article className={styles.header}>
-            <h1 className={styles.h1}>{title}</h1>
+            <h2 className={styles.h2}>{title}</h2>
         </article>
         <article className={styles.info}>
             {data.map(function(element, index) {
@@ -29,12 +30,15 @@ export default function DataView (props) {
                                 <b className={styles.date}>{element.startDate} - {element.endDate}</b>
                                 <span className={styles.address}>{element.address}</span>
                             </p>
-                            <button className={styles.deleteButton} onClick={() => { del(index) }}>
-                                Del
-                            </button>
-                            <button className={styles.editButton} onClick={() => { edit(index) }}>
-                                Edit
-                            </button>
+                            <div className={styles.buttonDiv}>
+                                <button className={styles.deleteButton} onClick={() => { del(index) }}>
+                                    <img src="/trash.png"></img>
+                                </button>
+                                <button className={styles.editButton} onClick={() => { edit(index) }}>
+                                    <img src="/botao-editar.png"></img>
+                                </button>
+                            </div>
+                            
                         </div>
                         <div className={styles.content}>
                             { type === "education" ?

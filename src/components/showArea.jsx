@@ -16,13 +16,13 @@ export default function ShowArea (props) {
             </div>
             <div className={styles.basicInfoContact}>
                 { basicData.email !== "" &&
-                    <p><b>Email: </b>{basicData.email}</p>
+                    <p><b>✉️ </b>{basicData.email}</p>
                 }
                 { basicData.phoneNumber !== "" &&
-                    <p><b>Phone number: </b>{basicData.phoneNumber}</p>
+                    <p><b>📱 </b>{basicData.phoneNumber}</p>
                 }
                 { basicData.address !== "" &&
-                    <p><b>Address: </b>{basicData.address}</p>
+                    <p><b>📍 </b>{basicData.address}</p>
                 }
             </div>
         </article>
