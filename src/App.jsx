@@ -59,7 +59,7 @@ export default function App () {
             </div>
             
         </div>
-        <div className={styles.panelView}>
+        <div className={styles.panelView} id="panelView">
             <ShowArea
             basicData = { basicData }/>
             { (educationData != null && educationData[0]?.id != null) && 
